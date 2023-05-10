@@ -11,7 +11,7 @@ Este é um template ara iniciar Node.js com TypeScript seguindo algumas boas pr�
 1. Clone o repositório para o seu ambiente local:  
 `git clone https://github.com/LuigiCleffi/cleanCode_NodeTypeScript-Template.git`  
 2. Acesse a pasta do projeto:  
-`cd cleanCode_NodeTypeScript-Template`  
+`cd cleanCode_NodeTypeScript-Template` 
 3.Instale as dependências do projeto:  
 `npm i`
 
