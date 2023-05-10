@@ -1,5 +1,5 @@
 # Clean Code Node Typescript Template  
-Este é um template ara iniciar Node.js com TypeScript seguindo algumas boas práticas de clean code.
+Este é um template para iniciar Node.js com TypeScript seguindo algumas boas práticas de clean code.
 
 ## Requisitos  
 <ul>
