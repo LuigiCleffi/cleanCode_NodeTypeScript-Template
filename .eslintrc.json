@@ -1,20 +1,20 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "extends": ["airbnb-base", "plugin:@typescript-eslint/recommended"],
+  "parser": "@typescript-eslint/parser", //define o parser utilizado pelo ESLint para analisar o código-fonte. Neste caso, o parser @typescript-eslint/parser é utilizado para suportar a sintaxe do TypeScript.
+  "plugins": ["@typescript-eslint"], //plugins: lista os plugins adicionais que o ESLint deve usar. Aqui, é utilizado o plugin @typescript-eslint, que fornece regras específicas para o TypeScript.
+  "extends": ["airbnb-base", "plugin:@typescript-eslint/recommended"], //extends: define as configurações que serão estendidas pela configuração atual. Neste caso, são utilizadas as regras do pacote airbnb-base (um conjunto de regras populares para JavaScript) e as regras do plugin @typescript-eslint/recommended (um conjunto de regras recomendadas para TypeScript).
   "rules": {
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "no-console": "error",
-    "quotes": ["error", "double"],
-    "indent": ["error", 4, { "SwitchCase": 1 }],
-    "semi": ["error", "always"],
-    "object-curly-newline": ["error", { "consistent": true }],
-    "function-call-argument-newline": ["error", "consistent"],
-    "function-paren-newline": ["error", "multiline"],
-    "comma-dangle": ["error", "never"],
-    "no-underscore-dangle": ["error", { "allow": ["_id"] }],
-    "import/extensions": [
+    "@typescript-eslint/explicit-function-return-type": "off", //desativa o aviso para o uso de tipos de retorno explícitos em funções. Esta regra é desativada porque o TypeScript já exige a especificação do tipo de retorno em funções.
+    "@typescript-eslint/no-explicit-any": "off", // desativa o aviso para o uso do tipo any. Esta regra é desativada para permitir o uso do tipo any em situações em que é necessário (por exemplo, em integrações com bibliotecas de terceiros que não têm definições de tipos).
+    "no-console": "error", //define que o uso de console.log ou outras funções de console é considerado um erro.
+    "quotes": ["error", "double"], //define que as strings devem ser delimitadas com aspas duplas.
+    "indent": ["error", 4, { "SwitchCase": 1 }], //define que o espaçamento de indentação deve ser de 4 espaços, e que deve haver um nível de indentação extra para case em um switch.
+    "semi": ["error", "always"], //define que todas as instruções devem terminar com ponto e vírgula.
+    "object-curly-newline": ["error", { "consistent": true }], //define que as chaves de objetos devem ser colocadas na mesma linha que a declaração do objeto.
+    "function-call-argument-newline": ["error", "consistent"], //define que os argumentos de chamadas de função devem estar na mesma linha que a chamada da função.
+    "function-paren-newline": ["error", "multiline"], //define que os parênteses das funções devem ser colocados em linhas separadas em chamadas de função multilinhas. comma-dangle: define que não deve haver uma vírgula adicional no final de objetos e arrays.
+    "comma-dangle": ["error", "never"],  //define que não deve haver uma vírgula adicional no final de objetos e arrays.
+    "no-underscore-dangle": ["error", { "allow": ["_id"] }], // define que não deve haver underlines no início ou fim de nomes de propriedades, exceto para a propriedade _id.
+    "import/extensions": [ // define que as extensões de arquivos não devem ser necessárias ao importar arquivos JavaScript e TypeScript.
       "error",
       "ignorePackages",
       {
@@ -23,13 +23,15 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "max-len": ["error", { "code": 80 }], //Define um limite de caracteres por linha
+    "max-lines-per-function": ["error", { "max": 20 }] //Define um limite máximo de linhas por função
   },
-  "env": {
+  "env": { // define o ambiente em que o código será executado. Aqui, é definido que o ambiente é o Node.js.
     "node": true
   },
-  "ignorePatterns": ["dist/"],
-  "overrides": [
+  "ignorePatterns": ["dist/"], //: define os arquivos e pastas que devem ser ignorados pelo ESLint. Aqui, é ignorada a pasta dist.
+  "overrides": [ //define as regras personalizadas
     {
       "files": ["src/**/*.ts"],
       "rules": {
